@@ -96,6 +96,7 @@
         function draw(x, y, dragging) {
           if (dragging) {
             ctx.lineTo(x, y)
+            ctx.strokeStyle='red'
             ctx.stroke()
           } else {
             ctx.moveTo(x, y)
