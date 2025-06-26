@@ -64,6 +64,10 @@
 
         let drawing = false
         let color = 'red'
+
+        let redButton=document.getElementById("redbtn");
+        let blueButton=document.getElementById("bluebtn");
+
         canvas.addEventListener('mousedown', (e) => {
           sendDrawingEvent(e.offsetX, e.offsetY, 'mousedown')
         })
@@ -112,25 +116,21 @@
           const message = JSON.stringify({ x, y, control, type: 'paint' })
           ws.send(message)
         }
-        let redButton=document.getElementById("redbtn");
+
         function changeColorToRed(){
-           //ctx.strokestyle = 'red' ;
-           //draw(x,y,dragging,'red');
            color = 'red'
-           alert('redボタンがクリックされました');
         }
-        let blueButton=document.getElementById("bluebtn");
         function changeColorToBlue(){
-         
-          //blackButton.addEventListener("click",() => {
-           //ctx.strokestyle = 'blue' ;
-           //draw(x,y,dragging,'blue');
            color = 'blue'
-           alert('blueボタンがクリックされました');
-          //});
         }
+
+        function sendColor(color){
+          const colorMsg = Json.stringify({color, type: 'color'})
+        }
+
         redButton.addEventListener('click',changeColorToRed);
         blueButton.addEventListener('click',changeColorToBlue);
+
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
           if (msg.type === 'paint') {
