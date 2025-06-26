@@ -126,6 +126,7 @@
 
         function sendColor(color){
           const colorMsg = Json.stringify({color, type: 'color'})
+          ws.send(colorMsg)
         }
 
         redButton.addEventListener('click',changeColorToRed);
