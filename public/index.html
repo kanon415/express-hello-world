@@ -119,19 +119,19 @@
 
         function changeColorToRed(){
            drawcolor = 'red'
-           //sendColor('red')
+           sendColor('red')
         }
         function changeColorToBlue(){
           drawcolor = 'blue'
-          //sendColor('blue')
+          sendColor('blue')
           
         }
 
         function sendColor(colorTo){
-          if(colorTo='red'){
+          if(colorTo==='red'){
             drawcolor = 'red'
           }
-          if(colorTo = 'blue'){
+          if(colorTo === 'blue'){
             drawcolor = blue
           }
           const colorMsg = Json.stringify({colorTo, type: 'color'})
