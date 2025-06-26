@@ -127,8 +127,8 @@
            alert('blackボタンがクリックされました');
           //});
         }
-        redButton.onclick=changeColorToRed();
-        blackButton.onclick=changeColorToBlack();
+        redButton.addEventListener('click',changeColorToRed);
+        blackButton.addEventListener('click',changeColorToBlack);
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
           if (msg.type === 'paint') {
