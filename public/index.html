@@ -44,7 +44,7 @@
     <div>
       <p>color</p>
       <button id = "redbtn" class="button" style="background-color: red; color: white">red</button>
-      <button id = "bluebtn" class="button" style="background-color: blue; color: white">black</button>
+      <button id = "bluebtn" class="button" style="background-color: blue; color: white">blue</button>
     </div>
     <canvas
       id="canvas"
@@ -101,7 +101,7 @@
         function draw(x, y, dragging) {
           if (dragging) {
             ctx.lineTo(x, y)
-           // ctx.strokeStyle='black';
+            ctx.strokeStyle='red';
             ctx.stroke()
           } else {
             ctx.moveTo(x, y)
@@ -124,7 +124,7 @@
          
           //blackButton.addEventListener("click",() => {
            ctx.strokestyle = 'blue' ;
-           alert('blackボタンがクリックされました');
+           alert('blueボタンがクリックされました');
           //});
         }
         redButton.addEventListener('click',changeColorToRed);
