@@ -98,10 +98,10 @@
           drawing = false
         }
 
-        function draw(x, y, dragging) {
+        function draw(x, y, dragging,color) {
           if (dragging) {
             ctx.lineTo(x, y)
-            ctx.strokeStyle='red';
+            ctx.strokeStyle=color;
             ctx.stroke()
           } else {
             ctx.moveTo(x, y)
@@ -114,16 +114,16 @@
         }
         let redButton=document.getElementById("redbtn");
         function changeColorToRed(){
-          //redButton.addEventListener("click",() => {
-           ctx.strokestyle = 'red' ;
+           //ctx.strokestyle = 'red' ;
+           draw(x,y,dragging,'red');
            alert('redボタンがクリックされました');
-          //});
         }
         let blueButton=document.getElementById("bluebtn");
         function changeColorToBlue(){
          
           //blackButton.addEventListener("click",() => {
-           ctx.strokestyle = 'blue' ;
+           //ctx.strokestyle = 'blue' ;
+           draw(x,y,dragging,'blue');
            alert('blueボタンがクリックされました');
           //});
         }
