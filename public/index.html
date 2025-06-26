@@ -118,27 +118,29 @@
         }
 
         function changeColorToRed(){
-           //color = 'red'
+           drawcolor = 'red'
            sendColor('red')
         }
         function changeColorToBlue(){
+          drawcolor = 'blue'
           sendColor('blue')
-           //color = 'blue'
+          
         }
 
         function sendColor(colorTo){
-          const colorMsg = Json.stringify({colorTo, type: 'color'})
-          ws.send(colorMsg)
           if(colorTo='red'){
             drawcolor = 'red'
           }
           if(colorTo = 'blue'){
             drawcolor = blue
           }
+          const colorMsg = Json.stringify({colorTo, type: 'color'})
+          ws.send(colorMsg)
+          
         }
 
-        redButton.addEventListener('click',sendColor('red'));
-        blueButton.addEventListener('click',sendColor('blue'));
+        redButton.addEventListener('click',changeColorToRed);
+        blueButton.addEventListener('click',changeColorToBlue);
 
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
