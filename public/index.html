@@ -44,7 +44,7 @@
     <div>
       <p>color</p>
       <button id = "redbtn" class="button" style="background-color: red; color: white">red</button>
-      <button id = "blackbtn" class="button" style="background-color: black; color: white">black</button>
+      <button id = "bluebtn" class="button" style="background-color: blue; color: white">black</button>
     </div>
     <canvas
       id="canvas"
@@ -115,20 +115,20 @@
         let redButton=document.getElementById("redbtn");
         function changeColorToRed(){
           //redButton.addEventListener("click",() => {
-           //ctx.strokestyle = 'red' ;
+           ctx.strokestyle = 'red' ;
            alert('redボタンがクリックされました');
           //});
         }
-        let blackButton=document.getElementById("blackbtn");
-        function changeColorToBlack(){
+        let blueButton=document.getElementById("bluebtn");
+        function changeColorToBlue(){
          
           //blackButton.addEventListener("click",() => {
-           //ctx.strokestyle = 'black' ;
+           ctx.strokestyle = 'blue' ;
            alert('blackボタンがクリックされました');
           //});
         }
         redButton.addEventListener('click',changeColorToRed);
-        blackButton.addEventListener('click',changeColorToBlack);
+        blueButton.addEventListener('click',changeColorToBlue);
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
           if (msg.type === 'paint') {
