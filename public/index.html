@@ -127,22 +127,22 @@
           
         }
 
-        function changeColorTo(color){
-          if(color==='red'){
+        function changeColorTo(colorTo){
+          if(colorTo==='red'){
             changeColorToRed()
           }
-          if(color==='blue'){
+          if(colorTo==='blue'){
             changeColorToBlue()
           }
         }
-        function sendColor(color){
-          if(color==='red'){
+        function sendColor(colorTo){
+          if(colorTo==='red'){
             drawcolor = 'red'
           }
-          if(color === 'blue'){
+          if(colorTo === 'blue'){
             drawcolor = blue
           }
-          const colorMsg = Json.stringify({color, type: 'color'})
+          const colorMsg = Json.stringify({colorTo, type: 'color'})
           ws.send(colorMsg)
           
         }
@@ -177,9 +177,9 @@
             messageList.appendChild(li)
           }
           if(msg.type === 'color'){
-            const {color} = msg
-            //drawcolor = {color}
-            chnageColorTo({color})
+            const {colorTo} = msg
+            //drawcolor = {colorTo}
+            chnageColorTo({colorTo})
           }
         }
 
