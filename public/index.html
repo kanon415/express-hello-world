@@ -101,7 +101,7 @@
         function draw(x, y, dragging) {
           if (dragging) {
             ctx.lineTo(x, y)
-            ctx.strokeStyle='black'
+           // ctx.strokeStyle='black';
             ctx.stroke()
           } else {
             ctx.moveTo(x, y)
@@ -119,7 +119,7 @@
            alert('redボタンがクリックされました');
           //});
         }
-        let blackButtom=document.getElementById("blackbtn");
+        let blackButton=document.getElementById("blackbtn");
         function changeColorToBlack(){
          
           //blackButton.addEventListener("click",() => {
