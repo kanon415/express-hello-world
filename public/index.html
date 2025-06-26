@@ -116,13 +116,15 @@
         function changeColorToRed(){
           const BUTTON_CLICK_EVENT=document.getElementById("redbtn");
           BUTTON_CLICK_EVENT.addEventListener("click",() => {
-           ctx.strokestyle = 'red' 
+           ctx.strokestyle = 'red' ;
+           alert('redボタンがクリックされました');
           });
         }
         function changeColorToBlack(){
           const BUTTON_CLICK_EVENT=document.getElementById("blackbtn");
           BUTTON_CLICK_EVENT.addEventListener("click",() => {
-           ctx.strokestyle = 'black' 
+           ctx.strokestyle = 'black' ;
+           alert('blackボタンがクリックされました');
           });
         }
         ws.onmessage = (event) => {
