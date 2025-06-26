@@ -63,7 +63,7 @@
         const ctx = canvas.getContext('2d')
 
         let drawing = false
-
+        let color = 'red'
         canvas.addEventListener('mousedown', (e) => {
           sendDrawingEvent(e.offsetX, e.offsetY, 'mousedown')
         })
@@ -98,7 +98,7 @@
           drawing = false
         }
 
-        function draw(x, y, dragging,color) {
+        function draw(x, y, dragging) {
           if (dragging) {
             ctx.lineTo(x, y)
             ctx.strokeStyle=color;
@@ -115,7 +115,8 @@
         let redButton=document.getElementById("redbtn");
         function changeColorToRed(){
            //ctx.strokestyle = 'red' ;
-           draw(x,y,dragging,'red');
+           //draw(x,y,dragging,'red');
+           color = 'red'
            alert('redボタンがクリックされました');
         }
         let blueButton=document.getElementById("bluebtn");
@@ -123,7 +124,8 @@
          
           //blackButton.addEventListener("click",() => {
            //ctx.strokestyle = 'blue' ;
-           draw(x,y,dragging,'blue');
+           //draw(x,y,dragging,'blue');
+           color = 'blue'
            alert('blueボタンがクリックされました');
           //});
         }
