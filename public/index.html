@@ -147,8 +147,8 @@
           
         }
 
-        redButton.addEventListener('click',changeColorToRed);
-        blueButton.addEventListener('click',changeColorToBlue);
+        redButton.addEventListener('click',sendColor('red'));
+        blueButton.addEventListener('click',sendColor('blue'));
 
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
