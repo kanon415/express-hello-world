@@ -142,13 +142,13 @@
           if(colorTo === 'blue'){
             drawcolor = blue
           }
-          const colorMsg = Json.stringify({colorTo, type: 'color'})
+          const colorMsg = JSON.stringify({colorTo, type: 'color'})
           ws.send(colorMsg)
           
         }
 
-        redButton.addEventListener('click',sendColor('red'));
-        blueButton.addEventListener('click',sendColor('blue'));
+        redButton.addEventListener('click',() => {sendColor('red')});
+        blueButton.addEventListener('click',() => {sendColor('blue')});
 
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
@@ -179,7 +179,7 @@
           if(msg.type === 'color'){
             const {colorTo} = msg
             //drawcolor = {colorTo}
-            chnageColorTo({colorTo})
+            changeColorTo({colorTo})
           }
         }
 
