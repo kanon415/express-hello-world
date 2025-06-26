@@ -63,7 +63,7 @@
         const ctx = canvas.getContext('2d')
 
         let drawing = false
-        let color = 'red'
+        let drawcolor = 'red'
 
         let redButton=document.getElementById("redbtn");
         let blueButton=document.getElementById("bluebtn");
@@ -105,7 +105,7 @@
         function draw(x, y, dragging) {
           if (dragging) {
             ctx.lineTo(x, y)
-            ctx.strokeStyle=color;
+            ctx.strokeStyle=drawcolor;
             ctx.stroke()
           } else {
             ctx.moveTo(x, y)
@@ -130,10 +130,10 @@
           const colorMsg = Json.stringify({colorTo, type: 'color'})
           ws.send(colorMsg)
           if(colorTo='red'){
-            color = 'red'
+            drawcolor = 'red'
           }
           if(colorTo = 'blue'){
-            color = blue
+            drawcolor = blue
           }
         }
 
@@ -167,7 +167,7 @@
             messageList.appendChild(li)
           }
           if(msg.type === 'color'){
-            color = color
+            drawcolor = msg
           }
         }
 
