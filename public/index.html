@@ -119,11 +119,11 @@
 
         function changeColorToRed(){
            drawcolor = 'red'
-           sendColor('red')
+          // sendColor('red')
         }
         function changeColorToBlue(){
           drawcolor = 'blue'
-          sendColor('blue')
+          //sendColor('blue')
           
         }
 
@@ -169,7 +169,7 @@
             messageList.appendChild(li)
           }
           if(msg.type === 'color'){
-            drawcolor = msg
+            drawcolor = msg.colorTo
           }
         }
 
