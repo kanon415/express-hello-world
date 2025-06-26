@@ -113,6 +113,18 @@
           ws.send(message)
         }
 
+        function changeColorToRed(){
+          const BUTTON_CLICK_EVENT=document.getElementById("redbtn");
+          BUTTON_CLICK_EVENT.addEventListener("click",() => {
+           ctx.strokestyle = 'red' 
+          });
+        }
+        function changeColorToBlack(){
+          const BUTTON_CLICK_EVENT=document.getElementById("blackbtn");
+          BUTTON_CLICK_EVENT.addEventListener("click",() => {
+           ctx.strokestyle = 'black' 
+          });
+        }
         ws.onmessage = (event) => {
           const msg = JSON.parse(event.data)
           if (msg.type === 'paint') {
